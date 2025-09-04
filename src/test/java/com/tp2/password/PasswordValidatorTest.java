@@ -7,10 +7,40 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class PasswordValidatorTest {
 
-    // TODO: Replace these lines with your tests
     @Test
-    void exampleTest(){
-        assertEquals(4, 2 + 1);
+    public void longitud_minima(){
+        PasswordValidator password = new PasswordValidator();
+        assertFalse(password.isValid("hola"));
+    }
+
+    @Test
+    public void upper_case(){
+        PasswordValidator password = new PasswordValidator();
+        assertFalse(password.isValid("sinmayuscula"));
+    }
+
+    @Test
+    public void lower_case(){
+        PasswordValidator password = new PasswordValidator();
+        assertFalse(password.isValid("SINMINUSCULA"));
+    }
+
+    @Test
+    public void number(){
+        PasswordValidator password = new PasswordValidator();
+        assertFalse(password.isValid("sinnumero"));
+    }
+
+    @Test
+    public void special(){
+        PasswordValidator password = new PasswordValidator();
+        assertFalse(password.isValid("noespeciales"));
+    }
+
+    @Test
+    public void todas_condiciones(){
+        PasswordValidator password = new PasswordValidator();
+        assertTrue(password.isValid("Genial1@"));
     }
 
 //    Missing tests:

@@ -6,11 +6,36 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class StringCalculatorTest {
 
-    // TODO: Replace these lines with your tests
+    StringCalculator sc = new StringCalculator();
+
     @Test
-    void exampleTest(){
-        assertEquals(4, 2 + 1);
+    public void un_numero(){
+        assertEquals(1,sc.add("1"));
     }
+    @Test
+    public void dos_numeros(){
+        assertEquals(3,sc.add("1,2"));
+    }
+    @Test
+    public void multiples_numeros(){
+        assertEquals(6,sc.add("1,2,3"));
+    }
+
+    @Test
+    public void string_vacio(){
+        assertEquals(0,sc.add(""));
+    }
+
+    @Test
+    public void salto_lineas(){
+        assertEquals(6,sc.add("1\n2,3"));
+    }
+
+    @Test
+    public void negativos(){
+        assertThrows(IllegalArgumentException.class, () -> sc.add("-1,2"));
+    }
+
 
 //    Missing tests:
 //

@@ -5,11 +5,82 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RomanNumeralsTest {
 
-    // TODO: Replace these lines with your tests
     @Test
-    void exampleTest(){
-        assertEquals(4, 2 + 1);
+    public void basic_numbersI(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("I", r.convert(1));
     }
+    @Test
+    public void basic_numbersV(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("V", r.convert(5));
+    }
+    @Test
+    public void basic_numbersX(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("X", r.convert(10));
+    }
+    @Test
+    public void restas(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("IX", r.convert(9));
+    }
+    @Test
+    public void restasIV(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("IV", r.convert(4));
+    }
+    @Test
+    public void medianosXL(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("XL", r.convert(40));
+    }
+    @Test
+    public void medianosL(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("L", r.convert(50));
+    }
+    @Test
+    public void medianosXC(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("XC", r.convert(90));
+    }
+    @Test
+    public void medianosC(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("C", r.convert(100));
+    }
+    @Test
+    public void grandesCD(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("CD", r.convert(400));
+    }
+    @Test
+    public void grandesD(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("D", r.convert(500));
+    }
+    @Test
+    public void grandesCM(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("CM", r.convert(900));
+    }
+    @Test
+    public void grandesM(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("M", r.convert(1000));
+    }
+    @Test
+    public void complejos_1(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("MCMXCIV", r.convert(1994));
+    }
+    @Test
+    public void complejos_2(){
+        RomanNumerals r = new RomanNumerals();
+        assertEquals("MMXXIII", r.convert(2023));
+    }
+
 
 //    Missing tests:
 //
